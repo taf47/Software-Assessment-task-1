@@ -170,7 +170,7 @@ class TriangleFunApp:
             for thing in self.fun_area.winfo_children():
                 thing.destroy()
             mode = 'dark' if self.is_dark else 'light'
-            tk.Label(self.fun_area, text=f"YAY! All Done!\nFinal Score: {self.points}/{len(self.questions)}",
+            tk.Label(self.fun_area, text=f"Nice! All Done\nFinal Score: {self.points}/{len(self.questions)}",
                      font=("Arial", 16), bg=self.colors[mode]['content_bg'],
                      fg=self.colors[mode]['text']).pack(pady=50)
             tk.Button(self.fun_area, text="Back", command=self.bye_fun_area,
@@ -222,14 +222,14 @@ class TriangleFunApp:
                      fg=self.colors[mode]['text'], bg=self.colors[mode]['frame_bg'], justify="left", wraplength=500).pack(anchor="w")
 
         try:
-            tri_pic = Image.open("classification-of-triangles-1621331800.png")
+            tri_pic = Image.open("classification.of.triangles.png")
             tri_pic = tri_pic.resize((360, 500), Image.LANCZOS)
             tri_photo = ImageTk.PhotoImage(tri_pic)
             img_label = tk.Label(scroll_frame, image=tri_photo, bg=self.colors[mode]['content_bg'])
             img_label.image = tri_photo 
             img_label.grid(row=1, column=1, rowspan=6, padx=20, pady=20, sticky="n")
         except Exception as e:
-            print("Oops! Pic didn’t load:", e)
+            print("Picure didn’t load:", e)
 
         back_btn = tk.Button(scroll_frame, text="Back", command=self.bye_fun_area,
                              font=("Arial", 14, "bold"), width=12,
